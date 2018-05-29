@@ -61,6 +61,9 @@ public class Glavna {
 			System.out.println(racunala[i].toString());
 		}
 */	
+		System.out.println("Gotovo");
 	}
 
+	
+	
 }
