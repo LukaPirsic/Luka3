@@ -79,7 +79,7 @@ public class MaticnaPloca extends Komponenta{
 					if (temp > maticnaPloca.getBrojMemorijskihModula()) {
 
 						System.out.printf(
-								"Pogreska! Unijeli ste neispravan broj memorijskih modula. Maticna ploca podrzava izmedu 2 i %s memorijskih modula! %n",
+								"Pogreska! Unijeli ste neispravan broj memorijskih modula. Maticna ploca podrzava do %s memorijskih modula! %n",
 								maticnaPloca.getBrojMemorijskihModula());
 						nastaviPetlju = true;
 					} else {

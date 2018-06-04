@@ -3,11 +3,13 @@ package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 public class Procesor extends Komponenta implements Ferkvencija {
 
 	public static final String SOCKET_AM2 = "Socket AM2";
 	public static final String SOCKET_AM3 = "Socket AM3";
-	public static final String LGA_1151 = "LGA 1151";
+	public static final String LGA_1151 = "Socket LGA 1151";
 	public static final String SOCKET_G3 = "Socket G3";
 
 	private String tip, tipSucelja;
@@ -71,7 +73,8 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		procesor.setTip(scanner.nextLine());
 				
 		procesor.tipSucelja = procesor.unosSucelja();
-					
+		// ZASTO MI ZA OVO VRACA 'null'???	
+		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
 		
 		// ANALIZA SUCELJA MATICNE I PROCESORA
 /*
@@ -86,18 +89,18 @@ public class Procesor extends Komponenta implements Ferkvencija {
 				nastaviPetlju = true;
 			}
 		} while (nastaviPetlju);
-*/
+
 		System.out.print("Unesi brzinu procesora: ");
 		procesor.setBrzina(scanner.nextBigDecimal());
 		scanner.nextLine();
-
+*/
 		return procesor;
 	}
 
 	// METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
 		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n"
-				+ "Tip sucelja procesora: " + getTipSucelja() + "\n" + "Brzina procesora: " + brzina + " GHz";
+				+ "Tip sucelja procesora: " + tipSucelja  + "\n" + "Brzina procesora: " + brzina + " GHz";
 	}
 
 	// METODA ZA UNOS SUCELJA
