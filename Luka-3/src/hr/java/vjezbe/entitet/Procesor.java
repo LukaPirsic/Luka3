@@ -69,12 +69,9 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		procesor.setNazivProizvodaca(scanner.nextLine());
 		System.out.print("Unesi tip procesora: ");
 		procesor.setTip(scanner.nextLine());
-		
-		
+				
 		procesor.tipSucelja = procesor.unosSucelja();
-		
-		//zasto je ovo "null"
-		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
+					
 		
 		// ANALIZA SUCELJA MATICNE I PROCESORA
 /*
