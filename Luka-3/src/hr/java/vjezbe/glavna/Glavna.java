@@ -19,9 +19,15 @@ public class Glavna {
 
 				System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
 				racunala[i] = Racunalo.fromUserInput(scanner);
+				
+				// ISPIS SAMO ZA PROVJERU SPREMANJA 
+				System.out.println(racunala[i].getMaticnaPloca().getTipSuceljaZaProcesor());
+				System.out.println(racunala[i].getProcesor().getTipSucelja());
+				
+				racunala[i].getProcesor().provjera();
 
 			}
-	
+			
 		// ISPIS KONFIGURACIJE
 		for (int i = 0; i < racunala.length; i++) {
 

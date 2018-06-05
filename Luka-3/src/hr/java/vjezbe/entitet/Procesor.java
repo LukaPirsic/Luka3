@@ -3,6 +3,8 @@ package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 public class Procesor extends Komponenta implements Ferkvencija {
 
 	public static final String SOCKET_AM2 = "Socket AM2";
@@ -71,7 +73,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		procesor.setTip(scanner.nextLine());
 
 		procesor.tipSucelja = procesor.unosSucelja();
-		procesor.provjera();
+		//procesor.provjera();
 		
 
 		System.out.print("Unesi brzinu procesora: ");
@@ -98,9 +100,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 			System.out.println("3) " + LGA_1151);
 			System.out.println("4) " + SOCKET_G3);
 			int temp = scanner.nextInt();
-
 			if (temp > 0 && temp < 5) {
-
 				switch (temp) {
 				case 1:
 					tipSucelja = SOCKET_AM2;
@@ -119,7 +119,6 @@ public class Procesor extends Komponenta implements Ferkvencija {
 					nastaviPetlju = false;
 					break;
 				}
-
 			} else {
 				System.out.println("Pogreska kod odabira, molim pokusajte ponovno!");
 				nastaviPetlju = true;
@@ -135,11 +134,13 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		MaticnaPloca maticnaPloca = new MaticnaPloca();
 
 		do {
-			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.tipSucelja) { //zakaj je ovo null i null?? zato kaj jos nije return-ao racunalo??
+			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) { //zakaj je ovo null i null?? zato kaj jos nije return-ao racunalo??
 				nastaviPetlju = false;
+				System.out.println("isti su");
 			} else {
 				System.out.println("Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
 				nastaviPetlju = true;
+				System.out.println("Nisu isti");
 			}
 		} while (nastaviPetlju);
 	}
