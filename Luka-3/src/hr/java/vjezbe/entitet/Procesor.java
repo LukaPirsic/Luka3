@@ -134,7 +134,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		MaticnaPloca maticnaPloca = new MaticnaPloca();
 
 		do {
-			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) { //zakaj je ovo null i null?? zato kaj jos nije return-ao racunalo??
+			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) { //zakaj je ovo null i null??
 				nastaviPetlju = false;
 				System.out.println("isti su");
 			} else {
