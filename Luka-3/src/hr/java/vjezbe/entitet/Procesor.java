@@ -3,8 +3,6 @@ package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 public class Procesor extends Komponenta implements Ferkvencija {
 
 	public static final String SOCKET_AM2 = "Socket AM2";
@@ -63,7 +61,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 
 	// METODA ZA UNOS KONFIGURACIJE
 	public static Procesor fromUserInput(Scanner scanner) {
-		
+
 		Procesor procesor = new Procesor();
 		MaticnaPloca maticnaPloca = new MaticnaPloca();
 
@@ -71,36 +69,22 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		procesor.setNazivProizvodaca(scanner.nextLine());
 		System.out.print("Unesi tip procesora: ");
 		procesor.setTip(scanner.nextLine());
-				
+
 		procesor.tipSucelja = procesor.unosSucelja();
-		// ZASTO MI ZA OVO VRACA 'null'???	
-		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
+		procesor.provjera();
 		
-		// ANALIZA SUCELJA MATICNE I PROCESORA
-/*
-		do {
-			procesor.tipSucelja = procesor.unosSucelja();
-			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.tipSucelja) {
-				
-				nastaviPetlju = false;
-			} else {
-				System.out.println(
-						"Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
-				nastaviPetlju = true;
-			}
-		} while (nastaviPetlju);
 
 		System.out.print("Unesi brzinu procesora: ");
 		procesor.setBrzina(scanner.nextBigDecimal());
 		scanner.nextLine();
-*/
+
 		return procesor;
 	}
 
 	// METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
 		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n"
-				+ "Tip sucelja procesora: " + tipSucelja  + "\n" + "Brzina procesora: " + brzina + " GHz";
+				+ "Tip sucelja procesora: " + tipSucelja + "\n" + "Brzina procesora: " + brzina + " GHz";
 	}
 
 	// METODA ZA UNOS SUCELJA
@@ -144,4 +128,19 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		return tipSucelja;
 	}
 
+	// ANALIZA SUCELJA MATICNE I PROCESORA
+	public void provjera() {
+
+		Procesor procesor = new Procesor();
+		MaticnaPloca maticnaPloca = new MaticnaPloca();
+
+		do {
+			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.tipSucelja) { //zakaj je ovo null i null?? zato kaj jos nije return-ao racunalo??
+				nastaviPetlju = false;
+			} else {
+				System.out.println("Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
+				nastaviPetlju = true;
+			}
+		} while (nastaviPetlju);
+	}
 }

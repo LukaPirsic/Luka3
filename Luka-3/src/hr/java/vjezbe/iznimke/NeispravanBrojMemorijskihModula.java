@@ -1,6 +1,6 @@
 package hr.java.vjezbe.iznimke;
 
-public class NeispravanBrojMemorijskihModula extends RuntimeException {
+public class NeispravanBrojMemorijskihModula extends RuntimeException {  //NEOZNACENE IZMINKE
 
 	/**
 	 * 
