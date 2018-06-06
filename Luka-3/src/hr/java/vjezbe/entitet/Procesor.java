@@ -3,7 +3,8 @@ package hr.java.vjezbe.entitet;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import hr.java.vjezbe.iznimke.NekompatibilnoSuceljeZaProcesorException;
 
 public class Procesor extends Komponenta implements Ferkvencija {
 
@@ -116,19 +117,16 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	}
 
 	// ANALIZA SUCELJA MATICNE I PROCESORA
-	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) {
+	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) throws NekompatibilnoSuceljeZaProcesorException {
 		
-		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
-		System.out.println(procesor.getTipSucelja());
+		//System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
+		//System.out.println(procesor.getTipSucelja());
 
 		do {
-			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) {
-				nastaviPetlju = false;
-			} else {
-				System.out.println(
-						"Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
-				nastaviPetlju = true;
-				procesor.unosSucelja();
+			if (maticnaPloca.getTipSuceljaZaProcesor() != procesor.getTipSucelja()) {
+
+				throw new NekompatibilnoSuceljeZaProcesorException(
+						"Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca! \n");
 			}
 		} while (nastaviPetlju);
 	}

@@ -3,6 +3,7 @@ package hr.java.vjezbe.glavna;
 import java.util.Scanner;
 
 import hr.java.vjezbe.entitet.Racunalo;
+import hr.java.vjezbe.iznimke.NekompatibilnoSuceljeZaProcesorException;
 
 public class Glavna {
 
@@ -10,6 +11,7 @@ public class Glavna {
 
 		Scanner scanner = new Scanner(System.in);
 		Racunalo racunala[] = new Racunalo[2];
+		boolean nastaviPetlju = false;
 
 		// UNOS KONFIGURACIJE
 		
@@ -17,12 +19,18 @@ public class Glavna {
 
 				racunala[i] = new Racunalo();
 
-				System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
-				racunala[i] = Racunalo.fromUserInput(scanner);
-				
-				racunala[i].getProcesor().provjera(racunala[i].getMaticnaPloca(), racunala[i].getProcesor());
-			}
-			
+			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
+			racunala[i] = Racunalo.fromUserInput(scanner);
+			do {
+				try {
+					racunala[i].getProcesor().provjera(racunala[i].getMaticnaPloca(), racunala[i].getProcesor());
+					nastaviPetlju = true;
+				} catch (NekompatibilnoSuceljeZaProcesorException e) {
+					System.out.printf(e.getMessage());
+				}
+			} while (nastaviPetlju);
+		}
+
 		// ISPIS KONFIGURACIJE
 		for (int i = 0; i < racunala.length; i++) {
 
