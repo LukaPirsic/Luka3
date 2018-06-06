@@ -10,41 +10,32 @@ public class MaticnaPloca extends Komponenta{
 	// KONSTRUKTOR
 	public MaticnaPloca() {
 	}
-
 	// NEKAJ DA MOGU PRISTUPITI NAZ.PROIZ. IZ KOMPONENTE
 	public MaticnaPloca(String nazivProizvodaca) {
 		super();
 	}
-
 	// GET I SET METODE
 	public void setNazivProizvodaca(String nazivProizvodaca) {
 		this.nazivProizvodaca = nazivProizvodaca;
 	}
-
 	public String getNazivProizvodaca() {
 		return nazivProizvodaca;
 	}
-
 	public void setTip(String tip) {
 		this.tip = tip;
 	}
-
 	public String getTip() {
 		return tip;
 	}
-
 	public void setTipSuceljaZaProcesor(String tipSuceljaZaProcesor) {
 		this.tipSuceljaZaProcesor = tipSuceljaZaProcesor;
 	}
-
 	public String getTipSuceljaZaProcesor() {
 		return tipSuceljaZaProcesor;
 	}
-
 	public void setBrojMemorijskihModula(int brojMemorijskihModula) {
 		this.brojMemorijskihModula = brojMemorijskihModula;
 	}
-
 	public int getBrojMemorijskihModula() {
 		return brojMemorijskihModula;
 	}

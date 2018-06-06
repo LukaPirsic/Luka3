@@ -20,45 +20,36 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	// KONSTRUKTOR
 	public Procesor() {
 	}
-
 	// NEKAJ DA MOGU PRISTUPITI NAZ.PROIZ. IZ KOMPONENTE
 	public Procesor(String nazivProizvodaca) {
 		super();
 	}
-
 	// GET I SET METODE
 	public void setNazivProizvodaca(String nazivProizvodaca) {
 		this.nazivProizvodaca = nazivProizvodaca;
 	}
-
 	public String getNazivProizvodaca() {
 		return nazivProizvodaca;
 	}
-
 	public void setTip(String tip) {
 		this.tip = tip;
 	}
-
 	public String getTip() {
 		return tip;
 	}
-
-	public void setTipSucelja(String tip) {
-		this.tip = tipSucelja;
+	public void setTipSucelja(String tipSucelja) {
+		this.tipSucelja = tipSucelja;
 	}
-
 	public String getTipSucelja() {
 		return tipSucelja;
 	}
-
 	public void setBrzina(BigDecimal brzina) {
 		this.brzina = brzina;
 	}
-
 	public BigDecimal getBrzina() {
 		return brzina;
 	}
-
+	
 	static boolean nastaviPetlju = false;
 
 	// METODA ZA UNOS KONFIGURACIJE
@@ -72,7 +63,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		System.out.print("Unesi tip procesora: ");
 		procesor.setTip(scanner.nextLine());
 
-		procesor.tipSucelja = procesor.unosSucelja();
+		procesor.setTipSucelja(procesor.unosSucelja());
 		//procesor.provjera();
 		
 
@@ -88,8 +79,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n"
 				+ "Tip sucelja procesora: " + tipSucelja + "\n" + "Brzina procesora: " + brzina + " GHz";
 	}
-
-	// METODA ZA UNOS SUCELJA
+	
 	public String unosSucelja() {
 
 		// PETLJA KOJA VRACA NA POCEKAT AKO NIJE BROJ ODABRAN IZMEDU 1 - 4
@@ -125,23 +115,21 @@ public class Procesor extends Komponenta implements Ferkvencija {
 			}
 		} while (nastaviPetlju);
 		return tipSucelja;
+
 	}
 
 	// ANALIZA SUCELJA MATICNE I PROCESORA
-	public void provjera() {
-
-		Procesor procesor = new Procesor();
-		MaticnaPloca maticnaPloca = new MaticnaPloca();
-
+	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) {
+	
 		do {
 			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) { //zakaj je ovo null i null??
 				nastaviPetlju = false;
-				System.out.println("isti su");
+				
 			} else {
 				System.out.println("Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
 				nastaviPetlju = true;
-				System.out.println("Nisu isti");
-			}
+				procesor.unosSucelja();
+							}
 		} while (nastaviPetlju);
 	}
 }

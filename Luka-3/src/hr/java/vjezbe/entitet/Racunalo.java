@@ -11,7 +11,6 @@ public class Racunalo {
 			
 	public Racunalo() {		
 	}
-	
 	public void setMaticnaPloca(MaticnaPloca maticnaPloca) {
 		this.maticnaPloca = maticnaPloca;
 	}
@@ -46,8 +45,9 @@ public class Racunalo {
 		RadnaMemorija radnaMemorija = new RadnaMemorija();
 		TvrdiDisk tvrdiDisk = new TvrdiDisk();
 				
-		racunalo.setMaticnaPloca(maticnaPloca.fromUserInput(scanner));
-		racunalo.setProcesor(procesor.fromUserInput(scanner));
+		racunalo.setMaticnaPloca(MaticnaPloca.fromUserInput(scanner));
+		racunalo.setProcesor(Procesor.fromUserInput(scanner));
+		racunalo.getProcesor().provjera(racunalo.getMaticnaPloca(), racunalo.getProcesor());
 		//racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
 		//racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
 		
