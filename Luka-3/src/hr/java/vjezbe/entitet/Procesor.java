@@ -56,7 +56,6 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	public static Procesor fromUserInput(Scanner scanner) {
 
 		Procesor procesor = new Procesor();
-		MaticnaPloca maticnaPloca = new MaticnaPloca();
 
 		System.out.print("Unesi proizvodaca procesora: ");
 		procesor.setNazivProizvodaca(scanner.nextLine());
