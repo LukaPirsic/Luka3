@@ -47,7 +47,6 @@ public class Racunalo {
 				
 		racunalo.setMaticnaPloca(MaticnaPloca.fromUserInput(scanner));
 		racunalo.setProcesor(Procesor.fromUserInput(scanner));
-		racunalo.getProcesor().provjera(racunalo.getMaticnaPloca(), racunalo.getProcesor());
 		//racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
 		//racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
 		

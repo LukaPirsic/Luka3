@@ -64,9 +64,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		procesor.setTip(scanner.nextLine());
 
 		procesor.setTipSucelja(procesor.unosSucelja());
-		//procesor.provjera();
 		
-
 		System.out.print("Unesi brzinu procesora: ");
 		procesor.setBrzina(scanner.nextBigDecimal());
 		scanner.nextLine();
@@ -79,7 +77,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n"
 				+ "Tip sucelja procesora: " + tipSucelja + "\n" + "Brzina procesora: " + brzina + " GHz";
 	}
-	
+
 	public String unosSucelja() {
 
 		// PETLJA KOJA VRACA NA POCEKAT AKO NIJE BROJ ODABRAN IZMEDU 1 - 4
@@ -120,16 +118,19 @@ public class Procesor extends Komponenta implements Ferkvencija {
 
 	// ANALIZA SUCELJA MATICNE I PROCESORA
 	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) {
-	
+		
+		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
+		System.out.println(procesor.getTipSucelja());
+
 		do {
-			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) { //zakaj je ovo null i null??
+			if (maticnaPloca.getTipSuceljaZaProcesor() == procesor.getTipSucelja()) {
 				nastaviPetlju = false;
-				
 			} else {
-				System.out.println("Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
+				System.out.println(
+						"Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
 				nastaviPetlju = true;
 				procesor.unosSucelja();
-							}
+			}
 		} while (nastaviPetlju);
 	}
 }
