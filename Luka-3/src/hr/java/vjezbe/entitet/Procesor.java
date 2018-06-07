@@ -118,9 +118,6 @@ public class Procesor extends Komponenta implements Ferkvencija {
 
 	// ANALIZA SUCELJA MATICNE I PROCESORA
 	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) throws NekompatibilnoSuceljeZaProcesorException {
-		
-		//System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
-		//System.out.println(procesor.getTipSucelja());
 
 		do {
 			if (maticnaPloca.getTipSuceljaZaProcesor() != procesor.getTipSucelja()) {

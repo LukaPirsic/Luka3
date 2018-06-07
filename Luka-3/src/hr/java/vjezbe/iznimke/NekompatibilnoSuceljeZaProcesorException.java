@@ -6,11 +6,7 @@ public class NekompatibilnoSuceljeZaProcesorException extends Exception { //OZNA
 	 * 
 	 */
 	private static final long serialVersionUID = -2148123292766696489L;
-	/*
-	public NekompatibilnoSuceljeZaProcesorException() {
-		super("Pogreska! Tip sucelja proesora mora se podudarati s tipom sucelja procesora na maticnoj ploca!");
-	}	
-	*/
+	
 	public NekompatibilnoSuceljeZaProcesorException(String message) {
 		super(message);
 	}

@@ -14,10 +14,10 @@ public class Glavna {
 		boolean nastaviPetlju = false;
 
 		// UNOS KONFIGURACIJE
-		
-			for (int i = 0; i < racunala.length; i++) {
 
-				racunala[i] = new Racunalo();
+		for (int i = 0; i < racunala.length; i++) {
+
+			racunala[i] = new Racunalo();
 
 			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
 			racunala[i] = Racunalo.fromUserInput(scanner);

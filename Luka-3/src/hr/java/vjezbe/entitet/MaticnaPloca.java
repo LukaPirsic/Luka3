@@ -39,9 +39,6 @@ public class MaticnaPloca extends Komponenta{
 	public int getBrojMemorijskihModula() {
 		return brojMemorijskihModula;
 	}
-
-	
-	
 	
 	// METODA ZA UNOS KONFIGURACIJE
 	public static MaticnaPloca fromUserInput(Scanner scanner) {
