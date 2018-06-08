@@ -13,7 +13,7 @@ public interface Memorijska {
 	BigDecimal x = new BigDecimal("1024");
 	
 	public static BigDecimal pretvoriUTB (BigDecimal kapacitet) {
-		return kapacitet.divide(x, 6, RoundingMode.CEILING);
+		return kapacitet.divide(x, 7, RoundingMode.CEILING);
 	}
 	
 }

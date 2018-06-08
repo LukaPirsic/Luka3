@@ -19,18 +19,19 @@ public class Glavna {
 
 			System.out.println(String.format("Unesi podatke %d. racunala:", i + 1));
 			racunala[i] = Racunalo.fromUserInput(scanner);
-/*			
+			
 			do {
 				try {
-					racunala[i].getProcesor().provjera(racunala[i].getMaticnaPloca(), racunala[i].getProcesor());
-					nastaviPetlju = true;
+					racunala[i].getProcesor().provjeraKompatibilnostiSucelja(racunala[i].getMaticnaPloca(), racunala[i].getProcesor());
+					nastaviPetlju = false;
 				} catch (NekompatibilnoSuceljeZaProcesorException e) {
 					System.out.printf(e.getMessage());
+					racunala[i].getProcesor().unosSucelja();
+					nastaviPetlju = true;
 				}
 			} while (nastaviPetlju);
-*/			
-		}
 
+		}
 		// ISPIS KONFIGURACIJE
 		for (int i = 0; i < racunala.length; i++) {
 

@@ -57,14 +57,16 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	public static Procesor fromUserInput(Scanner scanner) {
 
 		Procesor procesor = new Procesor();
+		MaticnaPloca maticnaPloca = new MaticnaPloca();
 
 		System.out.print("Unesi proizvodaca procesora: ");
 		procesor.setNazivProizvodaca(scanner.nextLine());
 		System.out.print("Unesi tip procesora: ");
 		procesor.setTip(scanner.nextLine());
 
-		procesor.setTipSucelja(procesor.unosSucelja());
-		
+		procesor.unosSucelja();
+		System.out.println(maticnaPloca.getTipSuceljaZaProcesor());
+				
 		System.out.print("Unesi brzinu procesora: ");
 		procesor.setBrzina(scanner.nextBigDecimal());
 		scanner.nextLine();
@@ -117,7 +119,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 	}
 
 	// ANALIZA SUCELJA MATICNE I PROCESORA
-	public void provjera(MaticnaPloca maticnaPloca, Procesor procesor) throws NekompatibilnoSuceljeZaProcesorException {
+	public void provjeraKompatibilnostiSucelja(MaticnaPloca maticnaPloca, Procesor procesor) throws NekompatibilnoSuceljeZaProcesorException {
 
 		do {
 			if (maticnaPloca.getTipSuceljaZaProcesor() != procesor.getTipSucelja()) {

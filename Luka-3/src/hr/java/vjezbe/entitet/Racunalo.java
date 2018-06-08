@@ -40,22 +40,18 @@ public class Racunalo {
 	public static Racunalo fromUserInput(Scanner scanner) {
 		
 		Racunalo racunalo = new Racunalo ();
-		MaticnaPloca maticnaPloca = new MaticnaPloca();
-		Procesor procesor = new Procesor();
-		RadnaMemorija radnaMemorija = new RadnaMemorija();
-		TvrdiDisk tvrdiDisk = new TvrdiDisk();
-				
+						
 		racunalo.setMaticnaPloca(MaticnaPloca.fromUserInput(scanner));
 		racunalo.setProcesor(Procesor.fromUserInput(scanner));
-		racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
-		racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
+		//racunalo.setRadnaMemorija(radnaMemorija.fromUserInput(scanner));
+		//racunalo.setTvrdiDisk(tvrdiDisk.fromUserInput(scanner));
 		
 		return racunalo;
 	}
 	
 			//METODA ZA ISPIS KONFIGURACIJE
 	public String toString() {
-		return maticnaPloca.toString() + "\n" + procesor.toString() + "\n" +  radnaMemorija.toString() + "\n" + tvrdiDisk.toString();
+		return maticnaPloca.toString() + "\n" + procesor.toString()/* + "\n" +  radnaMemorija.toString() + "\n" + tvrdiDisk.toString()*/;
 	}
 	
 }
