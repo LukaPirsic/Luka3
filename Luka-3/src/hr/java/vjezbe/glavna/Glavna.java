@@ -25,7 +25,7 @@ public class Glavna {
 					racunala[i].getProcesor().provjeraKompatibilnostiSucelja(racunala[i].getMaticnaPloca(), racunala[i].getProcesor());
 					nastaviPetlju = false;
 				} catch (NekompatibilnoSuceljeZaProcesorException e) {
-					System.out.printf(e.getMessage());
+					System.out.print(e.getMessage());
 					racunala[i].getProcesor().unosSucelja();
 					nastaviPetlju = true;
 				}
