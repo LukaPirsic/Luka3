@@ -79,7 +79,7 @@ public class Procesor extends Komponenta implements Ferkvencija {
 		return "Naziv proizvodaca procesora: " + nazivProizvodaca + "\n" + "Tip procesora: " + tip + "\n"
 				+ "Tip sucelja procesora: " + tipSucelja + "\n" + "Brzina procesora: " + brzina + " GHz";
 	}
-
+	
 	public String unosSucelja() {
 
 		// PETLJA KOJA VRACA NA POCEKAT AKO NIJE BROJ ODABRAN IZMEDU 1 - 4
